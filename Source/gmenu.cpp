@@ -313,7 +313,6 @@ BOOL __fastcall gmenu_presskeys(int a1)
 		}
 		break;
 	case VK_ESCAPE:
-	case 0x58:
 		if (gticks - gmenuslow > 300) {
 			PlaySFX(IS_TITLEMOV);
 			gmenu_call_proc(0, 0);

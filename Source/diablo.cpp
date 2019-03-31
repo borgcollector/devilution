@@ -1084,9 +1084,9 @@ void __fastcall PressKey(int vkey)
 			if (v1 == VK_RETURN) {
 				control_type_message();
 			}
-			if (v1 == VK_ESCAPE || v1 == 0x58) {
+			if (v1 == VK_ESCAPE) {
 			LABEL_113:
-				if (v1 == VK_ESCAPE || v1 == 0x58) {
+				if (v1 == VK_ESCAPE) {
 					if (!PressEscKey()) {
 						track_repeat_walk(0);
 						gamemenu_previous();
@@ -1554,12 +1554,15 @@ void __fastcall PressChar(int vkey)
 			case 'x':
 			case 'X':
 				// JAKE: Spacebar used to go back, now Z goes back.
-				if (ticks - menuopenslow < 300) {
-					return;
-				}
-				menuopenslow = ticks;
 				if (pcurs >= CURSOR_FIRSTITEM && invflag)
 					DropItemBeforeTrig();
+				ticks = GetTickCount();
+				if (ticks - castwait < 300) { // prevent re-entering talk after finished
+					return;
+				}
+				castwait = ticks;
+				if (!invflag && !talkflag)
+					RightMouseDown();
 				PressEscKey();
 				return;
 #ifdef _DEBUG

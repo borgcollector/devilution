@@ -17,7 +17,7 @@ int speedspellcount = 0;
 int hsr[3] = { 0, 0, 0 }; // hot spell row counts
 DWORD talkwait;
 DWORD talktick;
-static DWORD castwait;
+DWORD castwait;
 bool inmainmenu = false;
 
 // 0 = not near, >0 = distance related player 1 coordinates
@@ -505,13 +505,7 @@ void __fastcall keyboardExpension()
 			}
 		}
 	} else if (GetAsyncKeyState(0x58) & 0x8000) { // x key, similar to /\ button on PS1 controller. Cast spell or use skill.
-		ticks = GetTickCount();
-		if (ticks - castwait < 1500) { // prevent re-entering talk after finished
-			return;
-		}
-		castwait = ticks;
-		if (!invflag)
-			RightMouseDown();
+
 	} else if (GetAsyncKeyState(VK_RIGHT) & 0x8000 && GetAsyncKeyState(VK_DOWN) & 0x8000 || GetAsyncKeyState(0x44) & 0x8000 && GetAsyncKeyState(0x53) & 0x8000 || leftStickY <= -0.40 && leftStickX >= 0.40) {
 		walkInDir(WALK_SE);
 	} else if (GetAsyncKeyState(VK_RIGHT) & 0x8000 && GetAsyncKeyState(VK_UP) & 0x8000 || GetAsyncKeyState(0x57) & 0x8000 && GetAsyncKeyState(0x44) & 0x8000 || leftStickY >= 0.40 && leftStickX >= 0.40) {

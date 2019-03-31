@@ -20,6 +20,7 @@ extern const InvXY InvRect[73]; // wasn't made public, so I'll add this here fro
 
 extern DWORD talkwait;
 extern DWORD talktick;
+extern DWORD castwait;
 
 extern bool inmainmenu;
 
