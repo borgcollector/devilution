@@ -1,5 +1,11 @@
 Adding keyboard movements and controller support.
 
+## Video
+
+![https://www.youtube.com/watch?v=Ti4LgdTQ6cE](https://img.youtube.com/vi/Ti4LgdTQ6cE/0.jpg)
+
+## Layout
+
 ![](https://newagesoldier.com/devilution/img/diablo_keyboard.jpg)
 
 ![](https://newagesoldier.com/devilution/img/diablo_controller.jpg)
