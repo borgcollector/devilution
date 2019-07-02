@@ -55,6 +55,15 @@ Adding keyboard movements and controller support.
 - 4 new files have been added that have the new code in them, plrctrls.cpp/.h and joystick.cpp/.h
 - Any code that was altered in the other files were commented with `// JAKE`
 
+## How To Compile
+
+- Open Diablo.sln with [Visual Studio](https://visualstudio.microsoft.com). On the top bar select "Build" > "Build Solution". You now have the Diablo.exe file in your "Bin/Debug" folder. 
+- Replace your old game executable file with this file in your Diablo game folder (GOG or CD).
+
 ## Support
 
 If you find any bugs, please open an issue here on GitHub.
+
+## Author's Note
+
+This took me a few weeks to make and it would mean a lot to me if you would give credit for any borrowed code. Thank you!
